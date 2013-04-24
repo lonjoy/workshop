@@ -11,18 +11,61 @@ workshop
 ##准备材料
 
 ###Router
-
-|路由|说明|
-|''|首页|
-|#musichot|热门音乐榜|
-|#song/:id|歌曲播放|
+<table>
+    <thead>
+        <tr>
+            <td>路由</td>
+            <td>说明</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>''</td>
+            <td>首页</td>
+        </tr>
+        <tr>
+            <td>#musichot</td>
+            <td>热门音乐榜</td>
+        </tr>
+        <tr>
+            <td>#song/:id</td>
+            <td>歌曲播放</td>
+        </tr>
+    </tbody>
+</table>
 
 ###接口
-|API|说明|参数|
-|/music/musichot.php| 获取热门音乐榜 |page 页面，从0开始 |
-|/music/category.json| 获取所有的音乐分类 |无|
-|/music/artisthot.php| 获取热门歌手 |无|
-|/music/play.php| 获取歌曲详情 |id 歌曲id|
+<table>
+    <thead>
+        <tr>
+            <td>API</td>
+            <td>说明</td>
+            <td>参数</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/music/musichot.php</td>
+            <td>获取热门音乐榜</td>
+            <td>page 页面，从0开始</td>
+        </tr>
+        <tr>
+            <td>/music/category.json</td>
+            <td>获取所有的音乐分类</td>
+            <td>无</td>
+        </tr>
+        <tr>
+            <td>/music/artisthot.php</td>
+            <td>获取热门歌手</td>
+            <td>无</td>
+        </tr>
+        <tr>
+            <td>/music/play.php</td>
+            <td>获取歌曲详情</td>
+            <td>id 歌曲id</td>
+        </tr>
+    </tbody>
+</table>
 
 ##开始动手
 1. 运行fis，创建common、music两个项目。
