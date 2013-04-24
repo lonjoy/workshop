@@ -20,15 +20,15 @@
 }
 
 .global-loading-anim{
-    height:50px;
-    width:50px;
+    height:55px;
+    width:55px;
     -webkit-animation: loading-anim 2s linear infinite;
     background:url("../img/rotating.png") 0 0 no-repeat;
-    background-size: 50px 50px;
+    background-size: 55px 55px;
 }
 
 .global-loading-text{
-    margin-top:160px;
+    margin-top:130px;
     color: #888;
     font: bold 16px/30px normal;
 }
