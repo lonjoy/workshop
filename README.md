@@ -80,7 +80,7 @@ workshop
         <tr>
             <td>第一组</td>
             <td>完成首页的subview：category/artist/musichot</td>
-            <td>无</td>
+            <td>补充subview及对应的模板</td>
         </tr>
         <tr>
             <td>第二组</td>
