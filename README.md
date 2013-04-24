@@ -24,11 +24,11 @@ workshop
             <td>首页</td>
         </tr>
         <tr>
-            <td>#musichot</td>
+            <td>'#musichot'</td>
             <td>热门音乐榜</td>
         </tr>
         <tr>
-            <td>#song/:id</td>
+            <td>'#song/:id'</td>
             <td>歌曲播放</td>
         </tr>
     </tbody>
@@ -47,7 +47,7 @@ workshop
         <tr>
             <td>/music/musichot.php</td>
             <td>获取热门音乐榜</td>
-            <td>page 页面，从0开始</td>
+            <td>page(Int):页码,从0开始</td>
         </tr>
         <tr>
             <td>/music/category.json</td>
@@ -62,7 +62,7 @@ workshop
         <tr>
             <td>/music/play.php</td>
             <td>获取歌曲详情</td>
-            <td>id 歌曲id</td>
+            <td>id(Int):歌曲id</td>
         </tr>
     </tbody>
 </table>
