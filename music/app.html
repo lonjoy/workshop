@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <title>百度音乐</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon-precomposed" href="http://music.baidu.com/st/assets/img/icon/app.png">
+    <link rel="stylesheet" type="text/css" href="./css/app.css" />
+
+        
+</head>
+<body class="route-home">
+
+<div id="main">
+	<header id="header"></header>
+    <div id="wrapper" class="music" style="width:100%;overflow:hidden;">
+        <div id="scroller">
+            /*{fis-inline file="./tpl/globalloading.tpl.html"}*/
+            /*{fis-inline file="./tpl/pageloading.tpl.html"}*/
+            
+            /*{fis-inline file="./page/app/html/app.html"}*/
+            /*{fis-inline file="./page/category/html/category.html"}*/
+            /*{fis-inline file="./page/categorydetail/html/categorydetail.html"}*/
+            /*{fis-inline file="./page/index/html/index.html"}*/
+            
+            <!--TODO musichot-->
+            
+            /*{fis-inline file="./page/musicnew/html/musicnew.html"}*/
+            
+            /*{fis-inline file="./page/artist/html/artist.html"}*/
+            /*{fis-inline file="./page/artistdetail/html/artistdetail.html"}*/
+            /*{fis-inline file="./page/artisthot/html/artisthot.html"}*/
+            /*{fis-inline file="./page/feedback/html/feedback.html"}*/
+            /*{fis-inline file="./page/topic/html/topic.html"}*/
+            /*{fis-inline file="./page/topicdetail/html/topicdetail.html"}*/
+            /*{fis-inline file="./page/albumdetail/html/albumdetail.html"}*/
+            
+            <!--TODO song-->
+            
+
+            <div id="footer"></div>
+            <div id="footer-index">
+                <a class="feedback log btn" href="#feedback">意见反馈</a>
+                <a class="gotop btn" href="javascript:scroll(0,0)">返回顶部</a>
+            </div>
+        </div>
+        <div id="player" style="opacity: 1; display: none;"></div>
+    </div>
+    
+    
+    <script>
+        F.load(['common_lib', 'common_app', 'music_app'], function(){
+            app.init();
+        });
+    </script>
+    
+    <!--front template-->
+    /*{fis-inline file="./page/app/tpl/app.tpl.html"}*/
+    /*{fis-inline file="./page/category/tpl/category.tpl.html"}*/
+    /*{fis-inline file="./page/categorydetail/tpl/categorydetail.tpl.html"}*/
+    
+    /*{fis-inline file="./page/index/tpl/index.tpl.html"}*/
+    /*{fis-inline file="./page/index/tpl/index_scroll.tpl.html"}*/
+    /*{fis-inline file="./page/index/tpl/index_nav.tpl.html"}*/
+    /*{fis-inline file="./page/index/tpl/index_cover.tpl.html"}*/
+    
+    <!--TODO index_category-->
+    <!--TODO index_artisthot-->
+    <!--TODO index_musichot-->
+
+    
+    <!--TODO musichot-->
+    
+    /*{fis-inline file="./page/musicnew/tpl/musicnew.tpl.html"}*/
+    /*{fis-inline file="./page/musicnew/tpl/musicnew_item.tpl.html"}*/
+    
+    <!--TODO song-->
+    
+    /*{fis-inline file="./page/artist/tpl/artist.tpl.html"}*/
+    /*{fis-inline file="./page/artist/tpl/artist_item.tpl.html"}*/
+    
+    
+    /*{fis-inline file="./page/artistdetail/tpl/artistdetail.tpl.html"}*/
+    /*{fis-inline file="./page/artisthot/tpl/artisthot.tpl.html"}*/
+    /*{fis-inline file="./page/feedback/tpl/feedback.tpl.html"}*/
+    
+    /*{fis-inline file="./page/topic/tpl/topic.tpl.html"}*/
+    /*{fis-inline file="./page/topic/tpl/topic_item.tpl.html"}*/
+    
+    /*{fis-inline file="./page/topicdetail/tpl/topicdetail.tpl.html"}*/
+    
+    /*{fis-inline file="./page/albumdetail/tpl/albumdetail.tpl.html"}*/
+    
+    <!--front common template-->
+    /*{fis-inline file="./tpl/shortcut.tpl.html"}*/
+    /*{fis-inline file="./tpl/shortcutnav.tpl.html"}*/
+    /*{fis-inline file="./tpl/nav.tpl.html"}*/
+    /*{fis-inline file="./tpl/more.tpl.html"}*/
+    /*{fis-inline file="./tpl/toolbar.tpl.html"}*/
+    /*{fis-inline file="./tpl/player.tpl.html"}*/
+
+</body>
+</html>

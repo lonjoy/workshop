@@ -1,0 +1,10 @@
+<script type="text/template" id="template_artist_content_item">
+    <% _.each(artist, function(item, index){ %>
+        <% if(!item.ting_uid){return;} %>
+        <li class="artist left url arrow log"
+            data-artistid="<%= item.ting_uid %>">
+            <img class="pic" alt="<%= item.name %>" src="<%= item.avatar_middle %>">
+            <div class="info"><%= item.name %></div>
+        </li>
+    <% }); %>
+</script>

@@ -1,0 +1,34 @@
+<script type="text/template" id="template_albumdetail_content">
+<section class="content">
+	<div class="album">
+		<div class="mod">
+			<div class="pic">
+				<img alt="<%= albumdetail.albumInfo.title %>" src="<%= albumdetail.albumInfo.pic_small %>">
+			</div>
+			<div class="info">
+				<h2><%= albumdetail.albumInfo.title %></h2>
+				<p class="txt"><%= albumdetail.albumInfo.author %></p>
+				<p class="txt">
+					<time datetime="<%= albumdetail.albumInfo.publishtime %>"><%= albumdetail.albumInfo.publishtime %></time>
+					<%= albumdetail.albumInfo.songs_total %>首歌曲
+				</p>
+			</div>
+		</div>
+		<ul class="list">
+            <% _.each(albumdetail.songlist,function(item,index){ %>
+			<li class="song url log"
+                data-songid="<%= item.song_id %>">
+				<div class="left">
+					<div class="info">
+						<b><%= item.title %></b>
+						<br>
+						<span class="txt"><%= item.author %></span>
+					</div>
+				</div>
+				<div class="download need-active">下载</div>
+			</li>
+            <% }) %>
+		</ul>
+	</div>
+</section>
+</script>

@@ -1,0 +1,58 @@
+<script type="text/template" id="t-toolbar">
+
+    <div class="bar">
+        <div class="left">
+            <% if(options.action == 'index'){ %>
+                <span class="btn-rect ref btn-baidu" target="_blank" href="http://m.baidu.com?from=music">百度</span>
+                <span class="btn-rect btn-product"></span>
+            <% }else{ %>
+                <span class="btn need-active btn-back"></span>
+             <% } %>
+        </div>
+
+        <% if(_.indexOf(['musicnew', 'musichot', 'artist','category','topic'], options.action) >= 0){ %>
+        <h1  class="can-drop"><%= options.title %></h1>
+        <% }else{ %>
+        <h1><%= options.title %></h1>
+        <% } %>
+        
+        
+        <div class="right">
+            <% if(options.action == 'feedback'){ %>
+            <span class="btn-rect btn-submit">提交</span>
+            <% }else{ %>
+            <span class="btn need-active btn-search"></span>
+            <% } %>
+        </div>
+
+    </div>
+    <% if(_.indexOf(['musicnew', 'musichot', 'artist','category','topic'], options.action) >= 0){ %>
+    <ul class="drop-menu on" style="display:none;">
+        <li class="new <%= (options.action == 'musicnew') ? 'on' : '' %>">
+            <a href="#musicnew">新歌榜</a>
+        </li>
+        <li class="hot <%= (options.action == 'musichot') ? 'on' : '' %>">
+            <a href="#musichot">热歌榜</a>
+        </li>
+        <li class="artists <%= (options.action == 'artist') ? 'on' : '' %>">
+            <a href="#artist">歌手</a>
+        </li>
+        <li class="tags <%= (options.action == 'category') ? 'on' : '' %>">
+            <a href="#category">音乐分类</a>
+        </li>
+        <li class="topics <%= (options.action == 'topic') ? 'on' : '' %>">
+            <a href="#topic">专题</a>
+        </li>
+    </ul>
+    <% } %>
+    
+    
+    <div class="search show-input">
+        <form id="se_form" action="/" method="get">
+            <div class="search-input">
+                <a class="btn" href="#">百度一下</a>
+            <div id="ui-input-mask-1365494955896" class="ui-input-mask" style="height: 35px;"><input type="search" autocomplete="off" name="query" data-widget="quickdelete" value="" style="position: absolute; top: 0px; left: 0px; width: auto; right: 40px;"><div id="ui-quickdelete-delete-1365494955896" class="ui-quickdelete-button" style="height: 20px; width: 20px; padding: 10px; top: 0px; right: 0px; visibility: hidden;"></div><div id="ui-quickdelete-delete-1365494955990" class="ui-quickdelete-button" style="height: 20px; width: 20px; padding: 10px; top: 0px; right: 0px; visibility: hidden;"></div><div id="ui-quickdelete-delete-1365494962314" class="ui-quickdelete-button" style="height: 20px; width: 20px; padding: 10px; top: 0px; right: 0px; visibility: hidden;"></div></div></div>
+        </form>
+        <div id="ui-suggestion-0" class="ui-suggestion" style="position: absolute; left: 0px; height: 1208.415325164795px;"><div class="ui-suggestion-content"><div class="ui-suggestion-scroller"><ul><li><div class="ui-suggestion-noresult">暂无搜索记录</div></li></ul></div></div><div class="ui-suggestion-button"></div></div>
+    </div>
+</script>

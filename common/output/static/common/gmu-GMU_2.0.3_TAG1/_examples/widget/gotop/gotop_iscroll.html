@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>gotop demo - iscroll</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!--demo展示所用css，不用关心 begin-->
+    <link rel="stylesheet" type="text/css" href="/static/common/gmu-GMU_2.0.3_TAG1/assets/reset_7e01a27f.css" />
+    <link rel="stylesheet" href="/static/common/gmu-GMU_2.0.3_TAG1/_examples/widget/gotop/gotop_demo_79fb8ff9.css"/>
+    <!--demo展示所用css end-->
+    <!--组件依赖css begin-->
+    <link rel="stylesheet" type="text/css" href="/static/common/gmu-GMU_2.0.3_TAG1/assets/widget/gotop/gotop_022a0e72.css" />
+    <!--组件依赖css end-->
+    <!--组件依赖js begin-->
+    <script type="text/javascript" src="/static/common/gmu-GMU_2.0.3_TAG1/_src/core/zepto_60be3ba0.js"></script>
+    <script type="text/javascript" src="/static/common/gmu-GMU_2.0.3_TAG1/_src/core/zepto.extend_53f04fe6.js"></script>
+    <script type="text/javascript" src="/static/common/gmu-GMU_2.0.3_TAG1/_src/core/zepto.ui_cb00ed49.js"></script>
+    <script type="text/javascript" src="/static/common/gmu-GMU_2.0.3_TAG1/_src/core/zepto.fix_8a990505.js"></script>
+    <script type="text/javascript" src="/static/common/gmu-GMU_2.0.3_TAG1/_src/widget/gotop_64b76138.js"></script>
+    <script type="text/javascript" src="/static/common/gmu-GMU_2.0.3_TAG1/_src/widget/gotop.iscroll_3be750f3.js"></script>
+    <!--组件依赖js end-->
+
+    <!--demo展示所用js begin-->
+    <script type="text/javascript" src="/static/common/gmu-GMU_2.0.3_TAG1/_src/core/zepto.iscroll_91888440.js"></script>
+    <!--demo展示所用js end-->
+</head>
+<body>
+<div id="main">
+    <div id="thelist" >
+    </div>
+</div>
+<div id="gotop"></div>
+
+<script>
+    //填充页面
+    for(var i = 0, html = []; i < 50; i++) {html.push('<li>第 ' + i + ' 行</li>');}
+    $('#thelist').html(html.join(''));
+    //创建iScroll
+    var iScroll_1 = new iScroll('main');
+
+    //创建组件
+    $('#gotop').gotop({
+        iScrollInstance: iScroll_1      //将iscroll实例传入
+    });
+</script>
+<!--demo公用头部展示所用js，可以不用加载 begin-->
+<script id="bootstrap" src="/static/common/gmu-GMU_2.0.3_TAG1/_examples/example_c952f261.js" type="text/javascript" data-page="普通页面|gotop.html,使用iScroll|gotop_iscroll.html"></script>
+<!--demo公用头部展示所用js end-->
+</body>
+</html>

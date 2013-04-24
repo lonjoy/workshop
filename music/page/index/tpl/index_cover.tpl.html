@@ -1,0 +1,58 @@
+<script type="text/template" id="template_index_cover">
+    <div class="albums mod-2">
+        <div class="col-5">
+            <div class="bd">
+                <ul class="cover">
+                    <% _.each(album_list.slice(0,1),function(item,index){%>
+                        <li class="first log url" 
+                            data-id="<%= item.album_id %>"
+                            data-name="<%= item.title %>">
+                            <img alt="<%= item.title %>" src="<%= item.pic_radio %>">
+                            <div class="info">
+                                <span class="title"><%= item.title %></span>
+                                <span class="author"><%= item.author %></span>
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+                <ul class="items">
+                    <li class="hd">
+                        <h2>本周首发</h2>
+                    </li>
+                    <% _.each(album_list.slice(1,5),function(item,index){%>
+                        <% if(index == 0){ %>
+                        <li class="log url"
+                            data-id="<%= item.album_id %>"
+                            data-name="<%= item.title %>">
+                        <% }else{ %>
+                        <li class="log url items2"
+                            data-id="<%= item.album_id %>"
+                            data-name="<%= item.title %>">
+                        <% } %>
+                            <img alt="<%= item.title %>" src="<%= item.pic_small %>">
+                            <div class="info">
+                                <span class="title"><%= item.title %></span>
+                                <span class="author"><%= item.author %></span>
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+                
+            </div>
+        </div>
+        <ul class="items items1">
+            <% _.each(album_list.slice(2,5),function(item,index){%>
+                <li class="log url"
+                    data-id="<%= item.album_id %>"
+                    data-name="<%= item.title %>">
+                    <img alt="<%= item.title %>" src="<%= item.pic_small %>">
+                    <div class="info">
+                        <span class="title"><%= item.title %></span>
+                        <span class="author"><%= item.author %></span>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+			
+</script>

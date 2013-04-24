@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project basedir=".." modulename="common" framework="webapp-1.3.7.3">
+
+    <define name="release" value="../release"/>
+    
+    <setting>
+		<smarty left_delimiter="{@" right_delimiter="@}"/>
+        <!--** 修改baidu template的界定符 **-->
+        <TplSyntax frontld="&lt;%" frontrd="%&gt;"/>
+
+        <!--静态文件压缩-->
+        <CompressSyntax enable="false"/>
+        <JsCompressSyntax enable="false"/>
+
+        <!--css压缩-->
+        <CssCompressSyntax enable="true" yui_version="2.4.2" debug_enable="false"/>
+
+        <Base64Syntax limit="1024" enable="false"/>
+    </setting>
+        
+    
+    <merge>
+        <lib>
+            <import>/css-reset/reset.css</import>
+
+            <import>/zepto-1.0rc1/zepto.js</import>
+            <import>/underscore-1.4.4/underscore.js</import>
+            <import>/backbone-0.9.10/backbone.js</import>
+            <!--import>/iscroll-4.2.5/iscroll.js</import-->
+
+            <import>/gmu-GMU_2.0.3_TAG1/_src/core/zepto.extend.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/_src/core/zepto.ui.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/_src/core/zepto.iscroll.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/_src/core/zepto.fx.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/_src/core/zepto.fix.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/_src/core/zepto.highlight.js</import>
+
+            <import>/gmu-GMU_2.0.3_TAG1/_src/widget/gotop.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/gotop/gotop.css</import>
+            
+            <import>/gmu-GMU_2.0.3_TAG1/_src/widget/slider.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/slider/slider.css</import>
+            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/slider/slider.default.css</import>
+
+            <import>/gmu-GMU_2.0.3_TAG1/_src/widget/refresh.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/_src/widget/refresh.iscroll.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/refresh/refresh.iscroll.default.css</import>
+
+            <import>/gmu-GMU_2.0.3_TAG1/_src/widget/button.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/assets/icons.default.css</import>
+            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/button/button.css</import>
+            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/button/button.default.css</import>
+
+        </lib>
+
+        <app>
+            <import>/webapp-2.0/app.js</import>
+            <import>/webapp-2.0/*.js</import>
+        </app>
+    </merge>
+
+    <task name="refresh_manifest">
+        <delete dir="./output"/>
+        <manifestDateStamp/>
+    </task>
+
+    <build name="build" outputdir="./output" depends="refresh_manifest" />
+
+    <task name="release" depends="build">
+
+        <!--app index-->
+        <copy from="./output/main/index.html" to="${release}/" />
+
+        <!--app package-->
+        <copy from="./output/pkg" to="${release}/pkg" />
+
+        <!--app css-->
+        <copy from="./output/static/main/app/css" 
+            to="${release}/static/news/webapp_pro/css" />
+
+        <!--app img-->
+        <copy from="./output/static/main/app/img" 
+            to="${release}/static/news/webapp_pro/img" />
+
+        <!--app manifest-->
+        <copy from="./output/static/main/app/manifest" 
+            to="${release}/static/news/webapp_pro/manifest" />
+
+        <replace
+            pattern="/\/pkg\/webapp/"
+            replace="/newsios$0.php"
+            file="${release}/index.html"
+            />
+
+        <replace
+            pattern="/(manifest=&#34;)\.\/app\/manifest/"
+            replace="$1/newsios/static/news/webapp_pro/manifest"
+            file="${release}/index.html"
+            />
+
+        <replace
+            pattern="/\/main\/app/"
+            replace="/newsios/static/news/webapp_pro"
+            file="${release}/static/news/webapp_pro/manifest/cache.manifest"
+            />
+
+        <replace
+            pattern="/\/static\/main\/app/"
+            replace="/newsios/static/news/webapp_pro"
+            dir="${release}"
+            include="\.(html|css)$"
+            />
+
+        <replace
+            pattern="/\/common\/ui\/(GMU|VS)-ui\/image/"
+            replace="/newsios/static/news/webapp_pro/img/ui"
+            dir="${release}"
+            include="\.(css)$"
+            />
+    </task>
+</project>

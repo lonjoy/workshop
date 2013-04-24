@@ -1,0 +1,13 @@
+<script type="text/template" id="template_artisthot_content">
+    <section class="content">
+        <ul class="list">
+            <% _.each(artisthot, function(item, index){ %>
+            <li class="artist left url arrow log" 
+                data-artistid="<%= item.ting_uid %>">
+                <img class="pic" alt="<%= item.name %>" src="<%= item.avatar_middle %>">
+                <div class="info"><%= item.name %></div>
+            </li>
+            <% }); %>
+        </ul>
+    </section>
+</script>

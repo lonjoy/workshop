@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project basedir=".." modulename="music" framework="webapp-1.3.8">
+    <!--
+        ================================================
+        使用json为测试数据
+        ================================================
+    -->
+    <request>
+        <urlmap 
+            match="/^\/music\/ad\.json$/" 
+            rewrite="data/ad.json"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/category\.json$/" 
+            rewrite="data/category.json"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/artist\.php$/" 
+            rewrite="data/artist.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/artisthot\.php$/" 
+            rewrite="data/artisthot.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/music\.php$/" 
+            rewrite="data/music.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/musicnew\.php$/" 
+            rewrite="data/musicnew.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/musichot\.php$/" 
+            rewrite="data/musichot.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/topic\.php$/" 
+            rewrite="data/topic.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/topicdetail\.php$/" 
+            rewrite="data/topicdetail.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/play\.php$/" 
+            rewrite="data/play.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap 
+            match="/^\/music\/categorydetail\.php$/" 
+            rewrite="data/categorydetail.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+        />
+        <urlmap
+            match="/^\/music\/getInfo.php?$/"
+            rewrite="data/getInfo.php"
+            header="Content-Type:text/javascript; charset=UTF-8">
+            <get param="id" match="/^\d+$/"/>
+        </urlmap>
+        <urlmap
+            match="/^\/music\/getSongList\.php?$/"
+            rewrite="data/getSongList.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+            >
+            <get param="tingguid" match="/^\d+$/"/>
+         </urlmap>
+        <urlmap
+            match="/^\/music\/getAlbumList\.php$/"
+            rewrite="data/getAlbumList.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+            />
+        <urlmap
+            match="/^\/music\/albumdetail\.php$/"
+            rewrite="data/albumdetail.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+            />
+        <urlmap
+            match="/^\/music\/recommendalbum\.php$/"
+            rewrite="data/recommendalbum.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+            />
+        <urlmap
+            match="/^\/music\/artistalbum\.php$/"
+            rewrite="data/artistalbum.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+            />
+        <urlmap
+            match="/^\/music\/artistsongs\.php$/"
+            rewrite="data/artistsongs.php"
+            header="Content-Type:text/javascript; charset=UTF-8"
+            />
+    </request>
+    
+    <setting>
+        <!--静态文件压缩-->
+        <CompressSyntax enable="false"/>
+        <!--css压缩-->
+        <CssCompressSyntax enable="false" yui_version = "2.4.7"/>
+    </setting>
+        
+    
+    <merge>
+        <app>
+            <import>/js/*.js</import>
+            <import>/js/subview/*.js</import>
+            <import>/page/*.js</import>
+            <import>/page/*.css</import>
+        </app>   
+    </merge>
+    <build name="build" outputdir="./output" />
+</project>

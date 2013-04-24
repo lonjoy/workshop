@@ -1,0 +1,12 @@
+<script type="text/template" id="template_category_content">
+    <section class="content">
+        <ul class="list">
+            <% _.each(category, function(item, index){ %>
+            <li class="tag log url arrow"
+                data-lable="<%= item.label %>">
+                <%= item.label %>
+            </li>
+            <% }); %>
+        </ul>
+    </section>
+</script>
