@@ -6,42 +6,24 @@ app.router.vs = app.router.extend({
     // 路由配置
     routes: {
           ''                         : 'index'
-        , 'feedback'                 : 'feedback'
-        , 'app'                      : 'app'
+
         , 'category'                 : 'category'
         , 'categorydetail/:id'       : 'categorydetail'
         
         ///TODO musichot
-        
-        , 'musicnew'                 : 'musicnew'
-        
         ///TODO song
-        
-        , 'artist'                   : 'artist'
-        , 'artistdetail/:id/:panel'  : 'artistdetail'
-        , 'artisthot'                : 'artisthot'
-        , 'topic'                    : 'topic'
-        , 'topicdetail/:id/:name'    : 'topicdetail'
-        , 'albumdetail/:id/:name'    : 'albumdetail'
+
     }
 
     // 页面切换顺序配置
     ,pageOrder: [
           'index'
-        , 'feedback'
-        , 'app'
-        , 'musicnew'
+
+        , 'category'
+        , 'categorydetail'
         
         ///TODO musichot
-        
-        , 'artist'
-        , 'artisthot'
-        , 'artistdetail'
-        , 'category'
-        , 'categorydetail'      
-        , 'topic'
-        , 'topicdetail'
-        
+
     ]
 
     // 位置记忆，默认为false，不进行位置记忆
@@ -52,21 +34,9 @@ app.router.vs = app.router.extend({
 
     // 页面切换动画配置
     ,pageTransition: {
-          'index-feedback'     : 'slide'
 
-        , 'index-musicnew'     : 'slide'
-        , 'index-artist'       : 'slide'
-        , 'index-artisthot'    : 'slide'
-        , 'index-category'     : 'slide'
-        , 'index-topic'        : 'slide'
-        , 'index-song'         : 'slide'
-        , 'feedback-app'       : 'fade'
-        , 'topicdetail-song'   : 'slide'
-        , 'musichot-song'      : 'slide'
-        , 'musicnew-song'      : 'slide'
-        , 'artistdetail-song'  : 'slide'
-        , 'categorydetail-song': 'slide'
-        , 'topicdetail-song'   : 'slide'
+         'index-category'     : 'slide'
+
 
     }
 
@@ -78,21 +48,6 @@ app.router.vs = app.router.extend({
         );
     }
 
-    ,feedback : function(){
-        
-        this.doAction('feedback', {},
-            //禁止发送
-            {disable: true}
-        );
-    }
-    ,app : function(){
-        
-        this.doAction('app', {},
-            //禁止发送
-            {disable: true}
-        );
-    }
-    
     ,category : function(){
         
         this.doAction('category', {},
@@ -107,66 +62,11 @@ app.router.vs = app.router.extend({
             {disable: true}
         );
     }
-    
+ 
     ///TODO musichot
     
     ///TODO song
     
-    ,musicnew : function(){
-        
-        this.doAction('musicnew', {},
-            //禁止发送
-            {disable: true}
-        );
-    }
-
-    ,artist : function(){
-        
-        this.doAction('artist', {},
-            //禁止发送
-            {disable: true}
-        );
-    }
-    ,artistdetail : function(id,panel){
-        id = id || 0;
-        panel = panel || 'songs';
-        this.doAction('artistdetail', {id:decodeURIComponent(id),panel:decodeURIComponent(panel)},
-            //禁止发送
-            {disable: true}
-        );
-    }
-    ,artisthot : function(){
-        
-        this.doAction('artisthot', {},
-            //禁止发送
-            {disable: true}
-        );
-    }
-    ,topic : function(){
-        
-        this.doAction('topic', {},
-            //禁止发送
-            {disable: true}
-        );
-    }
-    ,topicdetail : function(id,name){
-        id = id || 0;
-        name = name || '';
-        this.doAction('topicdetail', {id:decodeURIComponent(id),name:decodeURIComponent(name)},
-            //禁止发送
-            {disable: true}
-        );
-    }
-    ,albumdetail : function(id,name){
-        id = id || 0;
-        name = name || '';
-        this.doAction('albumdetail', {id:decodeURIComponent(id),name:decodeURIComponent(name)},
-            //禁止发送
-            {disable: true}
-        );
-    }
-    
-
     ,defaultRoute: function(defaultUrl) {
         Backbone.history.navigate('index', {trigger: true, replace: true});
     }

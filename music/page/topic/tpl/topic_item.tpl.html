@@ -1,9 +1,0 @@
-<script type="text/template" id="template_topic_content_item">
-    <% _.each(topic,function(item,index){%>
-        <% if(!item.name){return;} %>
-        <li class="topic left url arrow log" data-code="<%= item.code %>" data-name="<%= item.name %>">
-            <img class="pic" alt="<%= item.name %>" src="<%= item.pic %>">
-            <div class="info"><%= item.name %></div>
-        </li>
-    <% }); %>
-</script>
