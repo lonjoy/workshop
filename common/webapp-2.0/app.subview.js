@@ -3,15 +3,15 @@
  */
 (function($) {
 
-app.subview = app.baseview.extend({
+rocket.subview = rocket.baseview.extend({
 
     // 初始化函数
     initialize: function(options, parentView){
-        if(parentView instanceof app.baseview){
-            app.baseview.prototype.initialize.call(this, options, parentView);
+        if(parentView instanceof rocket.baseview){
+            rocket.baseview.prototype.initialize.call(this, options, parentView);
         }
         else{
-            throw Error('app.subview creation: must supply parentView, which is an instance of app.baseview');
+            throw Error('rocket.subview creation: must supply parentView, which is an instance of rocket.baseview');
         }
     }
 

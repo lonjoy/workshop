@@ -1,9 +1,9 @@
 (function($) {
 
-    app.pageanimation_slide = {};
+    rocket.pageanimation_slide = {};
 
     function generateTransform(x, y, z) {
-        return "translate" + (app.has3d ? "3d" : "") + "(" + x + "px, " + y + "px" + (app.has3d ? (", " + z + "px)") : ")");
+        return "translate" + (rocket.has3d ? "3d" : "") + "(" + x + "px, " + y + "px" + (rocket.has3d ? (", " + z + "px)") : ")");
     };
 
     /**
@@ -14,7 +14,7 @@
      * @param restore 是否恢复原位置
      * @param callback 动画完成后的回调函数
      */
-    app.pageanimation_slide.animate = function(
+    rocket.pageanimation_slide.animate = function(
         currentEle, nextEle, dir, 
         callback, restore) {
 

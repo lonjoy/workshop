@@ -1,19 +1,19 @@
 
 (function($) {
 
-app.pageview.category = app.pageview.extend({
+rocket.pageview.category = rocket.pageview.extend({
     el: "#category_page"
 
     ,init: function(options){
         var me = this;
         
 
-        me.setup(new app.subview.category_header(options, me));
+        me.setup(new rocket.subview.category_header(options, me));
 
 
-        me.setup(new app.subview.category_content(options, me));
+        me.setup(new rocket.subview.category_content(options, me));
         
-        me.setup(new app.subview.shortcut({}, me));
+        me.setup(new rocket.subview.shortcut({}, me));
     }
     
     ,registerEvents : function(){
@@ -28,7 +28,7 @@ app.pageview.category = app.pageview.extend({
             param = params.params;
         
         if(to == me.ec){
-            new app.subview.toolbar({
+            new rocket.subview.toolbar({
                   title  : "音乐分类",
                   action : 'category'
             }, me);

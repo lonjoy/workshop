@@ -1,6 +1,6 @@
 (function($) {
 
-    app.pageanimation_simple = {};
+    rocket.pageanimation_simple = {};
 
     /**
      * 过门动画
@@ -9,7 +9,7 @@
      * @param dir 动画方向，0:无方向， 1:向左， 2:向右
      * @param callback 动画完成后的回调函数
      */
-    app.pageanimation_simple.animate = function(currentEle, nextEle, dir, callback) {
+    rocket.pageanimation_simple.animate = function(currentEle, nextEle, dir, callback) {
 
         var $currentEle = currentEle && $(currentEle),
             $nextEle = nextEle && $(nextEle);

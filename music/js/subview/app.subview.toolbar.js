@@ -1,7 +1,7 @@
 
 (function($) {
 
-app.subview.toolbar = app.subview.extend({
+rocket.subview.toolbar = rocket.subview.extend({
 
       el: "#header"
 

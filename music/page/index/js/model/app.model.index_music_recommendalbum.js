@@ -1,6 +1,6 @@
 (function($){
 
-app.model.index_music_recommendalbum = app.model.extend({
+rocket.model.index_music_recommendalbum = rocket.model.extend({
 
     initialize: function(attributes, options){
         var me = this;

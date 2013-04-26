@@ -3,7 +3,7 @@
  */
 (function($) {
 
-app.baseview = Backbone.View.extend({
+rocket.baseview = Backbone.View.extend({
     events: {}
 
     // 子类入口，子类可重写
@@ -41,9 +41,9 @@ app.baseview = Backbone.View.extend({
 
         // loading元素
         // 全局loading
-        me.$globalLoading = app.$globalLoading;
+        me.$globalLoading = rocket.$globalLoading;
         // 页面loading
-        me.$pageLoading = app.$pageLoading;
+        me.$pageLoading = rocket.$pageLoading;
 
         // 子类初始化方法
         me.init(options);
@@ -141,7 +141,7 @@ app.baseview = Backbone.View.extend({
      */
     ,_addSubview: function(view, type) {
         var me = this;
-        if(view instanceof app.baseview) {
+        if(view instanceof rocket.baseview) {
             me.children[view.id] = view;
             view.parent = me;
 
@@ -159,7 +159,7 @@ app.baseview = Backbone.View.extend({
             view.$el.hide();
         }
         else {
-            throw new Error("app.view.append arguments must be an instance of app.view");
+            throw new Error("rocket.view.append arguments must be an instance of rocket.view");
         }
     }
 
@@ -198,7 +198,7 @@ app.baseview = Backbone.View.extend({
     /**
      * 注册子页面
      * @param name 子页面名称，用以唯一标记子页面
-     * @param subpage 子页面，app.subview实例
+     * @param subpage 子页面，rocket.subview实例
      */
     ,registerSubpage: function(name, subpage){
         var me = this;
@@ -213,7 +213,7 @@ app.baseview = Backbone.View.extend({
     /**
      * 获取子页面
      * @param name 子页面名称，用以唯一标记子页面
-     * @return app.subview实例或者undefined
+     * @return rocket.subview实例或者undefined
      */
     ,getSubpage: function(name){
         var me = this, 
@@ -232,12 +232,12 @@ app.baseview = Backbone.View.extend({
      */
     ,setCurrentSubpage: function(subpage){
         var me = this;
-        if(subpage instanceof app.baseview){
+        if(subpage instanceof rocket.baseview){
             me._currentSubpage = subpage;
         }
         else{
             throw Error('error in method setCurrentSubpage: '
-                + 'subpage is not an instance of app.baseview');
+                + 'subpage is not an instance of rocket.baseview');
         }
     }
 
@@ -274,7 +274,7 @@ app.baseview = Backbone.View.extend({
             now = (new Date()).getTime(),
             stack;
 
-        if(!app.isLoaded){
+        if(!rocket.isLoaded){
             setTimeout(function(){
                 me.refreshScrollerHeight();
             }, 200);

@@ -1,7 +1,7 @@
 
 (function($) {
 
-app.subview.index_static_nav = app.subview.extend({
+rocket.subview.index_static_nav = rocket.subview.extend({
       el: "#index_page_nav"
 
     , template: _.template(

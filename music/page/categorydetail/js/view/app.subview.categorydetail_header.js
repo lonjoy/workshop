@@ -1,6 +1,6 @@
 (function($) {
 
-app.subview.categorydetail_header = app.subview.extend({
+rocket.subview.categorydetail_header = rocket.subview.extend({
     el: "#categorydetail_page_header",
 
     events: {

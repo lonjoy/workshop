@@ -3,7 +3,7 @@
  */
 (function($) {
 
-app.collection = Backbone.Collection.extend({
+rocket.collection = Backbone.Collection.extend({
     initialize: function(models, options){
         // 页面事件中心
         // this.ec = this.getRoot();
@@ -11,7 +11,7 @@ app.collection = Backbone.Collection.extend({
 
     // 获取页面控制器
     // ,getRoot: function(){
-    //     return app.view.prototype.getRoot.apply(this, arguments);
+    //     return rocket.view.prototype.getRoot.apply(this, arguments);
     // }
 
 });

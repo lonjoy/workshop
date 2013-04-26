@@ -4,7 +4,7 @@
  */
 (function($) {
 
-app.model = Backbone.Model.extend({
+rocket.model = Backbone.Model.extend({
     initialize: function(attributes, options){
 
         // 页面事件中心
@@ -13,7 +13,7 @@ app.model = Backbone.Model.extend({
 
     // 获取页面控制器
     // ,getRoot: function(){
-    //     return app.view.prototype.getRoot.apply(this, arguments);
+    //     return rocket.view.prototype.getRoot.apply(this, arguments);
     // }
 
 });

@@ -1,12 +1,12 @@
 (function($) {
 
-$.extend(app, {
+$.extend(rocket, {
     init: function() {
 
-        app.$globalLoading = $('#wrapper .global-loading');
-        app.$pageLoading = $('#wrapper .page-loading');
+        rocket.$globalLoading = $('#wrapper .global-loading');
+        rocket.$pageLoading = $('#wrapper .page-loading');
 
-        new app.router.vs();
+        new rocket.router.vs();
         Backbone.history.start();
 
         function scroll(e){
@@ -17,7 +17,7 @@ $.extend(app, {
                 $.later(function(){
                     $(document.body).height($(window).height());
                 });
-                app.isLoaded = true;
+                rocket.isLoaded = true;
             }, 1000); 
 
         }

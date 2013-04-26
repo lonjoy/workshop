@@ -1,7 +1,7 @@
 
 (function($) {
 
-app.subview.index_content_cover = app.subview.extend({
+rocket.subview.index_content_cover = rocket.subview.extend({
       el: "#index_page_cover"
 
     , template: _.template(
@@ -19,7 +19,7 @@ app.subview.index_content_cover = app.subview.extend({
 
         me.isFirstLoad = true;
 
-        me.model = new app.model.index_music_recommendalbum(null, options);
+        me.model = new rocket.model.index_music_recommendalbum(null, options);
 
         me.showLoading(me.$el);
         

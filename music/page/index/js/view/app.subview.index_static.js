@@ -1,7 +1,7 @@
 
 (function($) {
 
-app.subview.index_static = app.subview.extend({
+rocket.subview.index_static = rocket.subview.extend({
       el: "#index_page_static"
 
     , init: function(options){
@@ -12,8 +12,8 @@ app.subview.index_static = app.subview.extend({
             ;
 
 
-        me.setup(new app.subview.index_static_scroll(options, me));
-        me.setup(new app.subview.index_static_nav(options, me));
+        me.setup(new rocket.subview.index_static_scroll(options, me));
+        me.setup(new rocket.subview.index_static_nav(options, me));
     }
 
     

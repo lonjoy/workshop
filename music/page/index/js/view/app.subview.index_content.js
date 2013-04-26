@@ -1,7 +1,7 @@
 
 (function($) {
 
-app.subview.index_content = app.subview.extend({
+rocket.subview.index_content = rocket.subview.extend({
       el: "#index_page_content"
 
     , init: function(options){
@@ -12,7 +12,7 @@ app.subview.index_content = app.subview.extend({
             ;
 
 
-        me.setup(new app.subview.index_content_cover(options, me));
+        me.setup(new rocket.subview.index_content_cover(options, me));
         
         ///TODO index_content_category
         ///TODO index_content_artisthot

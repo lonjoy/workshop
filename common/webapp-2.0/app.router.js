@@ -1,10 +1,10 @@
 /**
  * Router类，监听URL变化，并作转发
- * 产品线需继承app.router类
+ * 产品线需继承rocket.router类
  */
 (function($) {
 
-app.router = Backbone.Router.extend({
+rocket.router = Backbone.Router.extend({
 
     // 实例化时自动调用
     initialize: function() {
@@ -93,7 +93,7 @@ app.router = Backbone.Router.extend({
         
         if(!view){
             view = me.views[action] 
-                = new app.pageview[action](params, action); 
+                = new rocket.pageview[action](params, action); 
         } 
         
         // 切换视图控制器
@@ -109,8 +109,8 @@ app.router = Backbone.Router.extend({
 
     /**
      * 通用切换页面逻辑
-     * @{param} from {app.pageview}
-     * @{param} to {app.pageview}
+     * @{param} from {rocket.pageview}
+     * @{param} to {rocket.pageview}
      * @{param} params {object}
      */
     switchPage: function(from, to, params){
@@ -185,7 +185,7 @@ app.router = Backbone.Router.extend({
         animate = me._selectAnimation(
                 fromView && fromView.action || null, 
                 toView && toView.action || null
-            ) || app['pageanimation_' + me.defaultPageTransition].animate; 
+            ) || rocket['pageanimation_' + me.defaultPageTransition].animate; 
 
         animate(
             fromView && fromView.el, 
@@ -215,8 +215,8 @@ app.router = Backbone.Router.extend({
         animateName = me.pageTransition[fromAction + '-' + toAction]
             || me.pageTransition[toAction + '-' + fromAction];
 
-        return app['pageanimation_' + animateName] 
-            && app['pageanimation_' + animateName].animate;
+        return rocket['pageanimation_' + animateName] 
+            && rocket['pageanimation_' + animateName].animate;
 
     }
 

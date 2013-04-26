@@ -3,7 +3,7 @@
  */
 (function($) {
 
-app.pageview = app.baseview.extend({
+rocket.pageview = rocket.baseview.extend({
 
     // 初始化函数
     initialize: function(options, action){
@@ -15,7 +15,7 @@ app.pageview = app.baseview.extend({
         }
         me.action = action;
 
-        app.baseview.prototype.initialize.call(me, options, null);
+        rocket.baseview.prototype.initialize.call(me, options, null);
     }
 
     ,savePos: function(){

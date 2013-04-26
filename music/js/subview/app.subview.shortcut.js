@@ -1,7 +1,7 @@
 
 (function($) {
 
-app.subview.shortcut = app.subview.extend({
+rocket.subview.shortcut = rocket.subview.extend({
 
       el: "#footer"
 

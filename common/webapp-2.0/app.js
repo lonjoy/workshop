@@ -1,9 +1,9 @@
 /**
- * app根命名空间
+ * rocket根命名空间
  */
 (function($) {
 
-window.app = window.app || {};
+window.rocket = window.rocket || {};
 
 })(Zepto);
 

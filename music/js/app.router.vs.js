@@ -1,7 +1,7 @@
 
 (function($) {
 
-app.router.vs = app.router.extend({
+rocket.router.vs = rocket.router.extend({
 
     // 路由配置
     routes: {
@@ -79,7 +79,7 @@ app.router.vs = app.router.extend({
      */
     ,doAction: function(action, params, statOptions){
 
-        app.router.prototype.doAction.apply(this, arguments);
+        rocket.router.prototype.doAction.apply(this, arguments);
     }
 
 }); 

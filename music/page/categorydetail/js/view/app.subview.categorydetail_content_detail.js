@@ -1,7 +1,7 @@
 
 (function($) {
 
-app.subview.categorydetail_content_detail = app.subview.extend({
+rocket.subview.categorydetail_content_detail = rocket.subview.extend({
    
     template: _.template(
         $('#template_categorydetail_content').text()
@@ -22,7 +22,7 @@ app.subview.categorydetail_content_detail = app.subview.extend({
         
         me.options = options;
         
-        me.model = new app.model.categorydetail_music(null, options);
+        me.model = new rocket.model.categorydetail_music(null, options);
 
         me.showLoading(me.$el);
         
@@ -76,7 +76,7 @@ app.subview.categorydetail_content_detail = app.subview.extend({
                 });
                 
             }
-            new app.subview.toolbar({
+            new rocket.subview.toolbar({
                   title  : decodeURIComponent(me.options.id)
             }, me);
         }
