@@ -68,6 +68,9 @@ workshop
 </table>
 
 ##分工
+
+所有人划分为三组，每一组的人做相同的部分，鼓励交流。
+
 <table>
     <thead>
         <tr>
@@ -78,17 +81,17 @@ workshop
     </thead>
     <tbody>
         <tr>
-            <td>第一组</td>
+            <td>第一部分</td>
             <td>完成首页的subview：category/artist/musichot</td>
             <td>补充subview及对应的模板</td>
         </tr>
         <tr>
-            <td>第二组</td>
+            <td>第二部分</td>
             <td>完成热门音乐榜</td>
             <td>首先补充路由，然后创建pageview目录</td>
         </tr>
         <tr>
-            <td>第三组</td>
+            <td>第三部分</td>
             <td>完成歌曲播放页(不含歌词展示及真实播放)</td>
             <td>首先补充路由，然后创建pageview目录</td>
         </tr>
@@ -98,7 +101,6 @@ workshop
 
 ##开始动手
 1. 运行fis，创建common、music两个项目。
-2. fork本项目，将common、music两个目录覆盖至第1步创建的项目。
+2. 下载本项目代码，将common、music两个目录覆盖至第1步创建的项目。
 3. 根据自己分到的任务，将相应的部分补充至项目里(对应的地方已有TODO标识)
-4. 测试无误后，提交代码并Pull到主干。
-5. 工作人员完成代码合并，展示整体效果。
+4. 测试、确认。
