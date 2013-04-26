@@ -76,24 +76,20 @@ workshop
         <tr>
             <td>组别</td>
             <td>任务</td>
-            <td>提示</td>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>第一部分</td>
             <td>完成首页的subview：category/artist/musichot</td>
-            <td>补充subview及对应的模板</td>
         </tr>
         <tr>
             <td>第二部分</td>
             <td>完成热门音乐榜</td>
-            <td>首先补充路由，然后创建pageview目录</td>
         </tr>
         <tr>
             <td>第三部分</td>
             <td>完成歌曲播放页(不含歌词展示及真实播放)</td>
-            <td>首先补充路由，然后创建pageview目录</td>
         </tr>
     </tbody>
 </table>
