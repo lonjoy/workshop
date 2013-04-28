@@ -7,7 +7,6 @@ rocket.pageview.categorydetail = rocket.pageview.extend({
     , init: function(options){
         var me = this;
 
-        me.setup(new rocket.subview.categorydetail_header(options, me));
 
         me.setup(new rocket.subview.categorydetail_content(options, me));
         
