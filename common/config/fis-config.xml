@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project basedir=".." modulename="common" framework="webapp-1.3.7.3">
+<project basedir=".." modulename="common" framework="webapp-1.3.8">
 
     <define name="release" value="../release"/>
     
@@ -10,12 +10,22 @@
 
         <!--静态文件压缩-->
         <CompressSyntax enable="false"/>
-        <JsCompressSyntax enable="false"/>
+        <JsCompressSyntax enable="true" debug_enable="false"/>
 
         <!--css压缩-->
         <CssCompressSyntax enable="true" yui_version="2.4.2" debug_enable="false"/>
 
         <Base64Syntax limit="1024" enable="false"/>
+
+        <!-- inline 使用内嵌方式加入loader脚本 -->
+        <AutoLoadSyntax enable="true" inline="true"/>
+
+        <!--libs>
+            <gmu version="1.0.4" type="webapp"/>
+        </libs-->
+
+        <!--SpeedMonitorSyntax enable="true" type="app"/-->
+        <!--ui name="webapp"/-->
     </setting>
         
     
@@ -37,10 +47,6 @@
 
             <import>/gmu-GMU_2.0.3_TAG1/_src/widget/gotop.js</import>
             <import>/gmu-GMU_2.0.3_TAG1/assets/widget/gotop/gotop.css</import>
-            
-            <import>/gmu-GMU_2.0.3_TAG1/_src/widget/slider.js</import>
-            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/slider/slider.css</import>
-            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/slider/slider.default.css</import>
 
             <import>/gmu-GMU_2.0.3_TAG1/_src/widget/refresh.js</import>
             <import>/gmu-GMU_2.0.3_TAG1/_src/widget/refresh.iscroll.js</import>
@@ -51,12 +57,15 @@
             <import>/gmu-GMU_2.0.3_TAG1/assets/widget/button/button.css</import>
             <import>/gmu-GMU_2.0.3_TAG1/assets/widget/button/button.default.css</import>
 
+            <import>/gmu-GMU_2.0.3_TAG1/_src/widget/slider.js</import>
+            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/slider/slider.css</import>
+            <import>/gmu-GMU_2.0.3_TAG1/assets/widget/slider/slider.default.css</import>
         </lib>
 
-        <app>
-            <import>/webapp-2.0/app.js</import>
-            <import>/webapp-2.0/*.js</import>
-        </app>
+        <rocket>
+            <import>/rocket-2.0/rocket.js</import>
+            <import>/rocket-2.0/*.js</import>
+        </rocket>
     </merge>
 
     <task name="refresh_manifest">
@@ -66,56 +75,4 @@
 
     <build name="build" outputdir="./output" depends="refresh_manifest" />
 
-    <task name="release" depends="build">
-
-        <!--app index-->
-        <copy from="./output/main/index.html" to="${release}/" />
-
-        <!--app package-->
-        <copy from="./output/pkg" to="${release}/pkg" />
-
-        <!--app css-->
-        <copy from="./output/static/main/app/css" 
-            to="${release}/static/news/webapp_pro/css" />
-
-        <!--app img-->
-        <copy from="./output/static/main/app/img" 
-            to="${release}/static/news/webapp_pro/img" />
-
-        <!--app manifest-->
-        <copy from="./output/static/main/app/manifest" 
-            to="${release}/static/news/webapp_pro/manifest" />
-
-        <replace
-            pattern="/\/pkg\/webapp/"
-            replace="/newsios$0.php"
-            file="${release}/index.html"
-            />
-
-        <replace
-            pattern="/(manifest=&#34;)\.\/app\/manifest/"
-            replace="$1/newsios/static/news/webapp_pro/manifest"
-            file="${release}/index.html"
-            />
-
-        <replace
-            pattern="/\/main\/app/"
-            replace="/newsios/static/news/webapp_pro"
-            file="${release}/static/news/webapp_pro/manifest/cache.manifest"
-            />
-
-        <replace
-            pattern="/\/static\/main\/app/"
-            replace="/newsios/static/news/webapp_pro"
-            dir="${release}"
-            include="\.(html|css)$"
-            />
-
-        <replace
-            pattern="/\/common\/ui\/(GMU|VS)-ui\/image/"
-            replace="/newsios/static/news/webapp_pro/img/ui"
-            dir="${release}"
-            include="\.(css)$"
-            />
-    </task>
 </project>
