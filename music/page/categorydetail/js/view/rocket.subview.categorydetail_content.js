@@ -9,16 +9,19 @@ rocket.subview.categorydetail_content = rocket.subview.extend({
               me = this
             , id = options.id
             , subView
+            , spm
             ;
 
-
+        spm = me.getSubpageManager({
+            subpageClass: rocket.subview.categorydetail_content_detail
+        });
         subView = new rocket.subview.categorydetail_content_detail(
             $.extend({}, options), 
             me
         );
         me.append(subView);
 
-        me.registerSubpage(id, subView);
+        spm.registerSubpage(me.featureString, subView);
     }
 
 
@@ -37,17 +40,6 @@ rocket.subview.categorydetail_content = rocket.subview.extend({
             ;
 
         if(to == me.ec) {
-            if(!me.getSubpage(param.id)){
-                var subView = new rocket.subview.categorydetail_content_detail(
-                    $.extend({}, param), 
-                    me
-                );
-                me.append(subView);
-                me.registerSubpage(param.id, subView);
-            }
-
-            me.setCurrentSubpage(me.getSubpage(param.id));
-            me.recycleSubpage();
 
             me.$el.show();
         }
